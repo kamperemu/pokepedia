@@ -3,16 +3,17 @@ import pokebase as pb
 import requests
 
 app = Flask(__name__)
-pokemonList = pb.APIResourceList('pokemon')
+
 
 
 @app.route("/")
 def index():
     return render_template("index.html")
 
-@app.route("/pokelist")
-def pokelist():
-    return render_template("pokelist.html", pokemons=pokemonList)
+@app.route("/pokelist/<int:page>")
+def pokelist(page):
+    pokemonList = requests.get(f"https://pokeapi.co/api/v2/pokemon?limit=50&offset={page*50}").json()
+    return render_template("pokelist.html", pokemons=pokemonList['results'])
 
 @app.route("/about")
 def about():

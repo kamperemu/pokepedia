@@ -18,7 +18,7 @@
             <p> Height: {{ pokemon.height }}</p>
             <p> Weight: {{ pokemon.weight }}</p>
             <p> Base Experience: {{ pokemon.base_experience }}</p>
-            <p> Abilities: {{ pokemon.abilities.0.ability.name }} {% if pokemon.abilities.1 %}{{ pokemon.abilities.1.ability.name }}{% endif %}</p></p>
+            <p> Abilities: <a href="/ability/{{ pokemon.abilities.0.ability.name }}">{{ pokemon.abilities.0.ability.name }}</a> {% if pokemon.abilities.1 %}<a href="/ability/{{ pokemon.abilities.0.ability.name }}">{{ pokemon.abilities.1.ability.name }}</a>{% endif %}</p></p>
             </div>
         </div>
     <p>Stats:</p>
