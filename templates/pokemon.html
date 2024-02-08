@@ -10,21 +10,23 @@
             <div class = "Background">
                 <img src="{{ pokemon.sprites.front_default }}" class = "image">
             </div>
-            <div class = "content">
-                <h1 class = "pokemon-name">{{ pokemon.name }}</h1>
-        <span class = "type">{{ pokemon.types.0.type.name }} {% if pokemon.types.1 %}{{ pokemon.types.1.type.name }}{% endif %}</span>
-
-        <div class = "stats">
-            <p> Height: {{ pokemon.height }}</p>
-            <p> Weight: {{ pokemon.weight }}</p>
-            <p> Base Experience: {{ pokemon.base_experience }}</p>
-            <p> Abilities: <a href="/ability/{{ pokemon.abilities.0.ability.name }}">{{ pokemon.abilities.0.ability.name }}</a> {% if pokemon.abilities.1 %}<a href="/ability/{{ pokemon.abilities.0.ability.name }}">{{ pokemon.abilities.1.ability.name }}</a>{% endif %}</p></p>
+                <div class = "stats">
+                    <a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                        
+                        <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white capitalize">{{ pokemon.name }}</h5>
+                        Type: <span class = "type">{{ pokemon.types.0.type.name }} {% if pokemon.types.1 %}{{ pokemon.types.1.type.name }}{% endif %}</span>
+                        <p class="font-normal text-gray-700 dark:text-gray-400"> Height: {{ pokemon.height }}</p>
+                        <p class="font-normal text-gray-700 dark:text-gray-400"> Weight: {{ pokemon.weight }}</p>
+                        <p class="font-normal text-gray-700 dark:text-gray-400"> Base Experience: {{ pokemon.base_experience }}</p>
+                        <h3 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">Pokemon Stats:</h3>
+                <ul>
+                    {% for stat in pokemon.stats %}
+                    <li>{{ stat.stat.name }}: {{ stat.base_stat }}</li>
+                    {% endfor %}
+                </ul>
+            </a>
+            <p class="font-normal text-gray-700 dark:text-gray-400"> Abilities: <a href="/ability/{{ pokemon.abilities.0.ability.name }}">{{ pokemon.abilities.0.ability.name }}</a> {% if pokemon.abilities.1 %}<a href="/ability/{{ pokemon.abilities.0.ability.name }}">{{ pokemon.abilities.1.ability.name }}</a>{% endif %}</p></p>    
             </div>
         </div>
-    <p>Stats:</p>
-    <ul>
-        {% for stat in pokemon.stats %}
-            <li>{{ stat.stat.name }}: {{ stat.base_stat }}</li>
-        {% endfor %}
-    </ul>
+</div>
 {% endblock %}
