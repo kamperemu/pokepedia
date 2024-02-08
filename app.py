@@ -22,3 +22,8 @@ def about():
 def pokemon(name):
     pokemon = requests.get(f"https://pokeapi.co/api/v2/pokemon/{name}").json()
     return render_template("pokemon.html", pokemon=pokemon)
+
+@app.route("/ability/<name>")
+def ability(name):
+    ability = requests.get(f"https://pokeapi.co/api/v2/ability/{name}").json()
+    return render_template("ability.html", ability=ability)

@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{ ability.name }}
+{% endblock %}
+
+{% block body %}
+    <h1 class="text-4xl font-bold mb-4">{{ ability.name }}</h1>
+    {% for effect in ability.effect_entries %}
+        {% if effect.language.name == "en" %}
+        <p class="text-gray-700">{{ effect.effect }}</p>
+        {% endif %}
+    {% endfor %}
+    <p class="text-gray-700">Generation: {{ ability.generation.name }}</p>
+    <p class="text-gray-700">Pokemon with this ability:</p>
+    <ul>
+        {% for pokemon in ability.pokemon %}
+            <li><a href="/pokemon/{{ pokemon.pokemon.name }}">{{ pokemon.pokemon.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
