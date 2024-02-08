@@ -6,22 +6,12 @@
 
 {% block body %}
         <div class="container m-auto grid grid-cols-5 gap-4">
-            {% for pokemon in pokemons %}
+            {% for pokemon in range(pokemonCount) %}
                 <div class="flex items-center justify-center">
-                    <a href="/pokemon/{{ pokemon.name }}">
-                        <img id="{{ pokemon.name }}" class="w-32 h-32" alt="{{ pokemon.name }}">
+                    <h1 class="text-1xl font-bold text-center">{{ pokemons[pokemon].name }}</h1>
+                    <a href="/pokemon/{{ pokemons[pokemon].name }}">
+                        <img id="{{ pokemons[pokemon].name }}" class="w-32 h-32" alt="{{ pokemons[pokemon].name }}" src="/static/pokemon/{{ pokemon+1 }}.png">
                     </a>
-                    <script>
-                        fetch("{{ pokemon.url }}")
-                            .then(response => response.json())
-                            .then(data => {
-                                let sprite = data.sprites.front_default;
-                                let img = document.createElement("img");
-                                img.src = sprite;
-                                img.alt = "{{ pokemon.name }}";
-                                document.getElementById("{{ pokemon.name }}").appendChild(img);
-                            });
-                    </script>
                 </div>
     {% endfor %}
 {% endblock %}
