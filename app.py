@@ -3,7 +3,7 @@ import pokebase as pb
 import requests
 
 app = Flask(__name__)
-pokemonList = requests.get(f"https://pokeapi.co/api/v2/pokemon?limit=10000").json()
+pokemonList = requests.get(f"https://pokeapi.co/api/v2/pokemon?limit=999").json()
 
 
 @app.route("/")
@@ -13,7 +13,7 @@ def index():
 @app.route("/pokelist")
 def pokelist():
     
-    return render_template("pokelist.html", pokemons=pokemonList['results'])
+    return render_template("pokelist.html", pokemons=pokemonList['results'], pokemonCount=999)
 
 @app.route("/about")
 def about():
