@@ -8,7 +8,9 @@
         <div class="container m-auto grid grid-cols-5 gap-4">
             {% for pokemon in pokemons %}
                 <div class="flex items-center justify-center">
-                    <img id="{{ pokemon.name }}" class="w-32 h-32" alt="{{ pokemon.name }}">
+                    <a href="/pokemon/{{ pokemon.name }}">
+                        <img id="{{ pokemon.name }}" class="w-32 h-32" alt="{{ pokemon.name }}">
+                    </a>
                     <script>
                         fetch("{{ pokemon.url }}")
                             .then(response => response.json())
