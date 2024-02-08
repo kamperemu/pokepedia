@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, session
+import pokebase as pb
 
 app = Flask(__name__)
 
@@ -9,8 +10,14 @@ def index():
 
 @app.route("/pokelist")
 def pokelist():
-    return render_template("pokelist.html")
+    pokemonList = pb.APIResourceList('pokemon')
+    return render_template("pokelist.html", pokemons=pokemonList)
 
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+@app.route("/pokemon/<name>")
+def pokemon(name):
+    pokemon = pb.pokemon(name)
+    return render_template("pokemon.html", pokemon=pokemon)
