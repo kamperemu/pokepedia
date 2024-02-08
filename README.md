@@ -7,6 +7,8 @@ Welcome to the Pokepedia webpage! This interactive website serves as your compre
 - **Detailed Information**: Get detailed information for each pokemon like ability, berry, item and move.
 - **Interactive Interface**: Navigate through the Pokelist with ease using the user-friendly interface.
 - **Random Pokémon**: Discover random Pokémon to learn more about different species.
+- **Abilities**: Click on abilities to find all pokemon with those abilities.
+- **About**: about page gives us the details of the creators
 
 ## How to use
 
@@ -28,8 +30,6 @@ Welcome to the Pokepedia webpage! This interactive website serves as your compre
 4. Run the command "sudo apt install python3-flask" or "sudo pacman -S python3-flask" (os dependent)
 5. Enter `flask run` in terminal
 
-## Credits
-- Pokemon data provided by []
 
 ## Colaborators
 - **Sarath Chandra Godithi** : `https://github.com/chandz01`
