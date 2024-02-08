@@ -26,10 +26,10 @@
                 </ul>
             </a>
             <p class="font-normal text-gray-700 dark:text-gray-400"> Abilities: 
-                <div class="flex items-center hover:underline">
-                <a href="/ability/{{ pokemon.abilities.0.ability.name }}">{{ pokemon.abilities.0.ability.name }}</a> 
+                <div>
+                <a href="/ability/{{ pokemon.abilities.0.ability.name }}" class=" hover:underline">{{ pokemon.abilities.0.ability.name }}</a> 
                 {% if pokemon.abilities.1 %}
-                    <a href="/ability/{{ pokemon.abilities.1.ability.name }}">{{ pokemon.abilities.1.ability.name }}</a>
+                    <a href="/ability/{{ pokemon.abilities.1.ability.name }}" class="hover:underline">{{ pokemon.abilities.1.ability.name }}</a>
                 {% endif %}
             </div>
             </p>
