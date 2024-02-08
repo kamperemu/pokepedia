@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, redirect, session
 import pokebase as pb
+import requests
 
 app = Flask(__name__)
+pokemonList = pb.APIResourceList('pokemon')
 
 
 @app.route("/")
@@ -10,7 +12,6 @@ def index():
 
 @app.route("/pokelist")
 def pokelist():
-    pokemonList = pb.APIResourceList('pokemon')
     return render_template("pokelist.html", pokemons=pokemonList)
 
 @app.route("/about")
@@ -19,5 +20,5 @@ def about():
 
 @app.route("/pokemon/<name>")
 def pokemon(name):
-    pokemon = pb.pokemon(name)
+    pokemon = requests.get(f"https://pokeapi.co/api/v2/pokemon/{name}").json()
     return render_template("pokemon.html", pokemon=pokemon)
