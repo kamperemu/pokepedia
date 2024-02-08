@@ -1,4 +1,4 @@
-# Pokepedia Webpage
+# Pokepedia Webpage(Team :- Equinox)
 
 Welcome to the Pokepedia webpage! This interactive website serves as your comprehensive guide to the vast world of Pokémon. This PokeDex has everything you need to know about the various Pokémon species.
 
@@ -24,7 +24,9 @@ Welcome to the Pokepedia webpage! This interactive website serves as your compre
 ## Installation
 1. Clone the repository: `https://github.com/kamperemu/pokepedia.git`
 2. Navigate to the project directory: `cd pokepedia`
-3. Enter `flask run` in terminal
+3. Run the command "pip install -r requirements.txt"
+4. Run the command "sudo apt install python3-flask" or "sudo pacman -S python3-flask" (os dependent)
+5. Enter `flask run` in terminal
 
 ## Credits
 - Pokemon data provided by []
