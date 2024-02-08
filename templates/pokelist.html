@@ -8,7 +8,7 @@
         <div class="container m-auto grid grid-cols-5 gap-4">
             {% for pokemon in range(pokemonCount) %}
                 <div class="flex items-center justify-center">
-                    <h1 class="text-1xl font-bold text-center">{{ pokemons[pokemon].name }}</h1>
+                    <h1 class="text-1xl font-bold text-center capitalize">{{ pokemons[pokemon].name }}</h1>
                     <a href="/pokemon/{{ pokemons[pokemon].name }}">
                         <img id="{{ pokemons[pokemon].name }}" class="w-32 h-32" alt="{{ pokemons[pokemon].name }}" src="/static/pokemon/{{ pokemon+1 }}.png">
                     </a>
