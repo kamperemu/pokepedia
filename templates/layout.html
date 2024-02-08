@@ -8,22 +8,19 @@
     {% block head %} {% endblock %}
 </head>
 <body>
-    {% block body %} {% endblock %}
-</body>
-</html>        <div class="container mx-auto">
-            <h1 class="text-white text-3xl font-bold">Pokemon Database</h1>
+    <header class="bg-red-500 py-4">
+        <div class="container mx-auto flex items-center justify-between px-4">
+            <h1 class="text-3xl font-bold text-white">Pokepedia</h1>
+            <nav>
+                <ul class="flex space-x-4 text-lg">
+                    <li><a href="#" class="text-white">Home</a></li>
+                    <li><a href="#" class="text-white">Pokedex</a></li>
+                    <li><a href="#" class="text-white">Trainers</a></li>
+                    <li><a href="#" class="text-white">Battles</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-
-    <main class="container mx-auto mt-8">
-        <!-- Your content goes here -->
-    </main>
-
-    <footer class="bg-gray-200 py-4">
-        <div class="container mx-auto text-center">
-            <p class="text-gray-600">© 2022 Pokemon Database. All rights reserved.</p>
-        </div>
-    </footer>
+    {% block body %} {% endblock %}
 </body>
-
 </html>
