@@ -272,3 +272,54 @@
     </div>
 </div>
 {% endblock %}
+
+{% block styles %}
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #eff3ff;
+        }
+        #ability-title{
+            text-align: center;
+            font-size: 30px;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+        #ability-effect{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #ability-generation {
+            margin-bottom: 1rem;
+        }
+
+        #ability-pokemon{
+            width: 200px;
+            margin: 10px 0;
+            padding: 20px 10px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
+{% endblock %} -->
+
+
+
+{% block head %}
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css"> -->
+    <link rel="stylesheet" href= "{{ url_for('static',filename='abilitystyle.css') }}">
+    <!-- <link rel = "stylesheet" href =  "/static/ablitystyle.css"> -->
+{% endblock %}
