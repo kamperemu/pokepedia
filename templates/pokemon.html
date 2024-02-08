@@ -5,13 +5,22 @@
 {% endblock %}
 
 {% block body %}
-    <img src="{{ pokemon.sprites.front_default }}"">
-    <h1>{{ pokemon.name }}</h1>
-    type: {{ pokemon.types.0.type.name }} {% if pokemon.types.1 %}{{ pokemon.types.1.type.name }}{% endif %}
-    <p>Height: {{ pokemon.height }}</p>
-    <p>Weight: {{ pokemon.weight }}</p>
-    <p>Abilities: {{ pokemon.abilities.0.ability.name }} {% if pokemon.abilities.1 %}{{ pokemon.abilities.1.ability.name }}{% endif %}</p>
-    <p>Base Experience: {{ pokemon.base_experience }}</p>
+    <div class=" pokemon-card-container">
+        <div class = "pokemon-card">
+            <div class = "Background">
+                <img src="{{ pokemon.sprites.front_default }}" class = "image">
+            </div>
+            <div class = "content">
+                <h1 class = "pokemon-name">{{ pokemon.name }}</h1>
+        <span class = "type">{{ pokemon.types.0.type.name }} {% if pokemon.types.1 %}{{ pokemon.types.1.type.name }}{% endif %}</span>
+
+        <div class = "stats">
+            <p> Height: {{ pokemon.height }}</p>
+            <p> Weight: {{ pokemon.weight }}</p>
+            <p> Base Experience: {{ pokemon.base_experience }}</p>
+            <p> Abilities: {{ pokemon.abilities.0.ability.name }} {% if pokemon.abilities.1 %}{{ pokemon.abilities.1.ability.name }}{% endif %}</p></p>
+            </div>
+        </div>
     <p>Stats:</p>
     <ul>
         {% for stat in pokemon.stats %}
